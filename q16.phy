@@ -1,0 +1,25 @@
+class AFD_BlocosDeZeros:
+    def __init__(self):
+        self.state = 0  
+
+    def transition(self, symbol):
+        if self.state == 0:  
+            if symbol == '1':
+                self.state = 0
+            elif symbol == '0':
+                self.state = 1  
+        elif self.state == 1:  
+            if symbol == '1':
+                self.state = 0  
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state in [0, 1]  
+
+
+afd = AFD_BlocosDeZeros()
+print(afd.accepts("1100"))  
+print(afd.accepts("1001"))  
+print(afd.accepts("000"))    
+print(afd.accepts("101010"))  
