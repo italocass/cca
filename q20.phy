@@ -1,0 +1,29 @@
+class AFD_AbExatamenteUmaVez:
+    def __init__(self):
+        self.state = 0 
+
+    def transition(self, symbol):
+        if self.state == 0:
+            if symbol == 'a':
+                self.state = 1
+        elif self.state == 1:
+            if symbol == 'b':
+                self.state = 2
+        elif self.state == 2:
+            if symbol == 'a':
+                self.state = 1  
+            elif symbol == 'b':
+                pass  
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 2  
+
+
+
+afd = AFD_AbExatamenteUmaVez()
+print(afd.accepts("ab"))      
+print(afd.accepts("aab"))     
+print(afd.accepts("abab"))     
+print(afd.accepts("bba"))     
