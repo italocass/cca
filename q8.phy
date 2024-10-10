@@ -1,0 +1,9 @@
+class AFN_ZeroDivisivelPor3:
+    def accepts(self, string):
+        return string.count('0') % 3 == 0
+
+
+
+afn = AFN_ZeroDivisivelPor3()
+print(afn.accepts("000"))  
+print(afn.accepts("00"))   
