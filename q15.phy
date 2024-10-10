@@ -1,0 +1,8 @@
+class AFN_ComprimentoPar:
+    def accepts(self, string):
+        return len(string) % 2 == 0
+
+
+
+afn = AFN_ComprimentoPar()
+print(
