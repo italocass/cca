@@ -1,0 +1,9 @@
+class AFN_Contem010:
+    def accepts(self, string):
+        return '010' in string
+
+
+
+afn = AFN_Contem010()
+print(afn.accepts("101001"))  
+print(afn.accepts("1100"))    
