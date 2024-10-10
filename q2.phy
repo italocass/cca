@@ -1,0 +1,19 @@
+class AFD_ParZeros:
+    def __init__(self):
+        self.state = 0  # Estado 0: par de zeros
+
+    def transition(self, symbol):
+        if symbol == '0':
+            self.state = 1 - self.state  # Alterna entre 0 e 1
+        # Não muda de estado com '1'
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 0
+
+
+# Teste
+afd = AFD_ParZeros()
+print(afd.accepts("1100"))  
+print(afd.accepts("1001"))  
