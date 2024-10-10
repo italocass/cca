@@ -1,0 +1,22 @@
+class AFD_IniciaTerminaMesmo:
+    def __init__(self):
+        self.state = 0  
+        self.first_char = None
+
+    def transition(self, symbol):
+        if self.state == 0:
+            self.first_char = symbol
+            self.state = 1
+        elif self.state == 1:
+            pass  
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 1 and (string[0] == string[-1])
+
+
+
+afd = AFD_IniciaTerminaMesmo()
+print(afd.accepts("101"))  
+print(afd.accepts("100"))  
