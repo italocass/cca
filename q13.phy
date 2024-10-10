@@ -1,0 +1,21 @@
+class AFD_MaiorUm:
+    def __init__(self):
+        self.count_0 = 0
+        self.count_1 = 0
+
+    def transition(self, symbol):
+        if symbol == '0':
+            self.count_0 += 1
+        elif symbol == '1':
+            self.count_1 += 1
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.count_1 > self.count_0
+
+
+
+afd = AFD_MaiorUm()
+print(afd.accepts("111"))   
+print(afd.accepts("00"))    
