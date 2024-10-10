@@ -1,0 +1,9 @@
+class AFN_Inicio01Fim10:
+    def accepts(self, string):
+        return string.startswith("01") and string.endswith("10")
+
+
+
+afn = AFN_Inicio01Fim10()
+print(afn.accepts("0110"))  
+print(afn.accepts("1001"))  
