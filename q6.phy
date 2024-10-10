@@ -1,0 +1,9 @@
+class AFN_PeloMenosUmZero:
+    def accepts(self, string):
+        return '0' in string
+
+
+
+afn = AFN_PeloMenosUmZero()
+print(afn.accepts("111")) 
+print(afn.accepts("100"))  
