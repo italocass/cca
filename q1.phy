@@ -1,0 +1,26 @@
+class AFD_TerminaCom1:
+    def __init__(self):
+        self.state = 0 
+
+    def transition(self, symbol):
+        if self.state == 0:
+            if symbol == '1':
+                self.state = 1
+            elif symbol == '0':
+                self.state = 0
+        elif self.state == 1:
+            if symbol == '1':
+                self.state = 1
+            elif symbol == '0':
+                self.state = 0
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 1
+
+
+
+afd = AFD_TerminaCom1()
+print(afd.accepts("110"))  
+print(afd.accepts("100"))  
