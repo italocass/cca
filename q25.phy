@@ -1,0 +1,14 @@
+class AFN_AAntesDeB:
+    def accepts(self, string):
+        found_b = False
+        for symbol in string:
+            if symbol == 'b':
+                found_b = True
+            elif symbol == 'a' and found_b:
+                return False  
+        return True 
+
+
+
+afn = AFN_AAntesDeB()
+print(afn.accepts("aaabbb
