@@ -1,0 +1,20 @@
+class AFD_DiferencaMultiplaDeTres:
+    def __init__(self):
+        self.state = 0  
+
+    def transition(self, symbol):
+        if symbol == 'a':
+            self.state = (self.state + 1) % 3
+        elif symbol == 'b':
+            self.state = (self.state - 1) % 3
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 0  
+
+
+
+afd = AFD_DiferencaMultiplaDeTres()
+print(afd.accepts("aaa"))   
+print(afd.accepts("aabbb"))  
