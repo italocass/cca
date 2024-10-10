@@ -1,0 +1,29 @@
+class AFD_Contem101:
+    def __init__(self):
+        self.state = 0
+
+    def transition(self, symbol):
+        if self.state == 0:
+            if symbol == '1':
+                self.state = 1
+        elif self.state == 1:
+            if symbol == '0':
+                self.state = 2
+            elif symbol == '1':
+                self.state = 1
+        elif self.state == 2:
+            if symbol == '1':
+                self.state = 3
+            elif symbol == '0':
+                self.state = 2
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 3
+
+
+
+afd = AFD_Contem101()
+print(afd.accepts("110101"))   
+print(afd.accepts("0000"))    
