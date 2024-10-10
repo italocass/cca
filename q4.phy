@@ -1,0 +1,18 @@
+class AFD_PeloMenosUmZero:
+    def __init__(self):
+        self.state = 0  
+
+    def transition(self, symbol):
+        if symbol == '0':
+            self.state = 1  
+
+    def accepts(self, string):
+        for symbol in string:
+            self.transition(symbol)
+        return self.state == 1
+
+
+
+afd = AFD_PeloMenosUmZero()
+print(afd.accepts("111"))  
+print(afd.accepts("100"))  
