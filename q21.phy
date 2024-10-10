@@ -1,0 +1,17 @@
+class AFN_BA:
+    def accepts(self, string):
+        found_b = False
+        for symbol in string:
+            if symbol == 'b':
+                found_b = True
+            elif symbol == 'a' and found_b:
+                found_b = False  
+            elif found_b:  
+                return False
+        return not found_b  
+
+
+
+afn = AFN_BA()
+print(afn.accepts("bab"))  
+print(afn.accepts("bba")) 
