@@ -1,0 +1,9 @@
+class AFN_Sem11Ou00:
+    def accepts(self, string):
+        return "11" not in string and "00" not in string
+
+
+
+afn = AFN_Sem11Ou00()
+print(afn.accepts("101"))  
+print(afn.accepts("1100"))  
